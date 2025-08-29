@@ -1,2 +1,2 @@
-# Kn-ckebrot
+# Knäckebrot
 A Corne inspired Split Keboard 
