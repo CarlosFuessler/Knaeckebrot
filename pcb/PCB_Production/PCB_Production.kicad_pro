@@ -450,7 +450,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "pcb_full.kicad_pro",
+    "filename": "PCB_Production.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -485,7 +485,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "./",
+      "netlist": "",
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
@@ -608,11 +608,6 @@
     "subpart_first_id": 65,
     "subpart_id_separator": 0
   },
-  "sheets": [
-    [
-      "9726f12a-2909-400c-a1f8-d834faf6b0fb",
-      "Root"
-    ]
-  ],
+  "sheets": [],
   "text_variables": {}
 }
