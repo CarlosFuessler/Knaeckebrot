@@ -22,7 +22,7 @@ A Corne inspired Split Keboard
 
 ## Firmware
     
-    - Use our ZMK firmware wich you can personalize via ZMK Studio
+    - Use our ZMK firmware which you can personalize via ZMK Studio
     - Load the Firmware on your controllers via Actions
 ## Assets
 Case designs etc.. are in the Assets folder!
