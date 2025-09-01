@@ -24387,6 +24387,32 @@
 		(layer "Edge.Cuts")
 		(uuid "fdbcb62c-489b-4193-9955-a83ff19cd716")
 	)
+	(gr_text "Made in Germany"
+		(at 79.44 130.23 0)
+		(layer "F.SilkS")
+		(uuid "4529a808-9610-44e0-aaeb-367facfed461")
+		(effects
+			(font
+				(size 1.016 1.016)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "Knäckebrot"
+		(at 79.21 128.26 0)
+		(layer "F.SilkS")
+		(uuid "8201aad8-5d76-4f33-81c9-6a7bb9c7b797")
+		(effects
+			(font
+				(size 2.262 2.262)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(segment
 		(start 49.2755 56.851)
 		(end 53.7955 56.851)
