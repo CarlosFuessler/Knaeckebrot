@@ -9,7 +9,7 @@ A Corne inspired Split Keboard
 - 128x32 Display
 
 ## List of all Parts 
- ```md
+ ```js
 # For the Assembly
 
     - PCB
