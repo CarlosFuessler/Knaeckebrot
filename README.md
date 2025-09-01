@@ -29,4 +29,6 @@ Case designs etc.. are in the Assets folder!
 
 ```
 
-This project is not ready yet!
+![plot](Assets/Preview/pcb.jpg)
+
+ 
