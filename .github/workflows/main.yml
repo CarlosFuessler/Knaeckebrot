@@ -24,7 +24,7 @@ jobs:
       - name: Update west dependencies
         run: west update
       - name: Build ${{ matrix.shield }} for ${{ matrix.board }}
-        run: west build -s app -b ${{ matrix.board }} -- -DSHIELD=${{ matrix.shield }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b ${{ matrix.board }} -- -DSHIELD=${{ matrix.shield }} -DZMK_CONFIG="config"
       - name: Archive firmware
         uses: actions/upload-artifact@v4
         with:
