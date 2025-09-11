@@ -10,4 +10,10 @@ on:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-module.yml@main
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      # The path to your config folder.
+      config-path: config
+      # The name of the build-file in your config folder.
+      build-file: build.yaml
+    secrets: inherit
