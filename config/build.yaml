@@ -1,3 +1,11 @@
+# This file generates the GitHub Actions matrix
+# For simple board + shield combinations, add them
+# to the top level include array.
+#
+# Then run `gh workflow run build.yml` to trigger the build.
+#
+# For more complex builds, see the documentation on build matrices
+# https://zmk.dev/docs/development/builds-matrix
 include:
   - board: nice_nano_v2
     shield: knaeckebrot_left

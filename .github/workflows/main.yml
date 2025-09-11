@@ -1,19 +1,23 @@
-name: Main Workflow
+name: Build
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      # The path to your config folder.
-      config-path: config
-      # The name of the build-file in your config folder.
-      build-file: build.yaml
-    secrets: inherit
+    runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:3.5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Initialize workspace
+        run: west init -l .
+      - name: Update west dependencies
+        run: west update
+      - name: Build Firmwares
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=knaeckebrot_left -DZMK_CONFIG="config"
+      - name: Archive firmware
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: build/zephyr/zmk.uf2
