@@ -23,8 +23,10 @@ jobs:
         run: west init -l .
       - name: Update west dependencies
         run: west update
+      - name: Find ZMK app directory
+        run: find . -name "app" -type d | grep zmk
       - name: Build ${{ matrix.shield }} for ${{ matrix.board }}
-        run: west build -s zmk/app -b ${{ matrix.board }} -- -DSHIELD=${{ matrix.shield }} -DZMK_CONFIG="config"
+        run: west build -s $(find . -path "*/zmk/app" | head -1) -b ${{ matrix.board }} -- -DSHIELD=${{ matrix.shield }} -DZMK_CONFIG="$(pwd)/config"
       - name: Archive firmware
         uses: actions/upload-artifact@v4
         with:
