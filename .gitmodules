@@ -1,3 +1,6 @@
 [submodule "firmware/zmk-keyboard-knaeckebrot"]
 	path = firmware/zmk-keyboard-knaeckebrot
 	url = https://github.com/CarlosFuessler/zmk-keyboard-knaeckebrot.git
+[submodule "zmk-keyboard-knaeckebrot"]
+	path = zmk-keyboard-knaeckebrot
+	url = https://github.com/CarlosFuessler/zmk-keyboard-knaeckebrot.git
