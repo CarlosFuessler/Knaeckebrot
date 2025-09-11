@@ -1,0 +1,25 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_KNAECKEBROT_LEFT
+	def_bool $(shields_list_contains,knaeckebrot_left)
+
+config SHIELD_KNAECKEBROT_RIGHT
+	def_bool $(shields_list_contains,knaeckebrot_right)
+
+if SHIELD_KNAECKEBROT_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "Knaeckebrot"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_KNAECKEBROT_LEFT || SHIELD_KNAECKEBROT_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif
