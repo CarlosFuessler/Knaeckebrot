@@ -1,5 +1,8 @@
-# Copyright (c) 2024 The ZMK Contributors
-# SPDX-License-Identifier: MIT
+/*
+ * Copyright (c) 2024 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
 
 #include "knaeckebrot.dtsi"
 
@@ -15,5 +18,5 @@
 		, <&pro_micro 19 GPIO_ACTIVE_HIGH>
 		, <&pro_micro 20 GPIO_ACTIVE_HIGH>
 		, <&pro_micro 21 GPIO_ACTIVE_HIGH>
-		;
+		 ;
 };
