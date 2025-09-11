@@ -1,23 +1,32 @@
 name: Build
 
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:3.5
+    strategy:
+      matrix:
+        include:
+          - board: nice_nano_v2
+            shield: knaeckebrot_left
+            artifact-name: knaeckebrot_left-nice_nano_v2-zmk
+          - board: nice_nano_v2
+            shield: knaeckebrot_right
+            artifact-name: knaeckebrot_right-nice_nano_v2-zmk
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Initialize workspace
         run: west init -l .
       - name: Update west dependencies
         run: west update
-      - name: Build Firmwares
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=knaeckebrot_left -DZMK_CONFIG="config"
+      - name: Build ${{ matrix.shield }} for ${{ matrix.board }}
+        run: west build -s zmk/app -b ${{ matrix.board }} -- -DSHIELD=${{ matrix.shield }} -DZMK_CONFIG="config"
       - name: Archive firmware
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: firmware
+          name: ${{ matrix.artifact-name }}
           path: build/zephyr/zmk.uf2
