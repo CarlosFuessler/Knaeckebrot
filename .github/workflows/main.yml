@@ -1,0 +1,13 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-module.yml@main
